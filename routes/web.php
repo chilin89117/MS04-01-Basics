@@ -42,3 +42,11 @@ Route::get('/lec68',function() {
 Route::get('/lec70',function() {
   return view('lecture70');
 });
+
+Route::get('/lec76',function() {
+  return view('lecture76');
+});
+
+Route::get('/new',function() {
+  return view('new');
+});
