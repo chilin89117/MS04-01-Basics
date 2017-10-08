@@ -1,26 +1,16 @@
 @extends('layouts.app')
 
+@section('panel-heading')
+<div class="panel-heading">Lecture 28: Dynamic CSS</div>
+@endsection
+
 @section('content')
 <div id="lec28">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">Lecture 28: Dynamic CSS</div>
+  <div class="demo" @click="attachRed=!attachRed" :class="divClasses"></div>
+  <div class="demo" :class="divClasses"></div>
+  <div class="demo" :class="color"></div>
 
-          <div class="panel-body">
-
-            <div class="demo" @click="attachRed=!attachRed" :class="divClasses"></div>
-            <div class="demo" :class="divClasses"></div>
-            <div class="demo" :class="color"></div>
-
-            <p><input v-model="color"></p>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <p><input v-model="color"></p>
 </div>
 
 <style media="screen">
@@ -40,7 +30,7 @@
 
 @section('custom_scripts')
 <script>
-var vueThis = new Vue ({
+var vm = new Vue ({
   el : '#lec28',
   data: {
     attachRed: false,

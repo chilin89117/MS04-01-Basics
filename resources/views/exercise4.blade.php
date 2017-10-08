@@ -1,50 +1,40 @@
 @extends('layouts.app')
 
+@section('panel-heading')
+<div class="panel-heading">Exercise 4</div>
+@endsection
+
 @section('content')
 <div id="ex">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">Exercise 4</div>
+  <!-- Click button to alternate between 2 classes -->
+  <div>
+    <button @click="startEffect">Start Effect</button>
+    <div id="effect" :class="effectClass"></div>
+  </div>
 
-          <div class="panel-body">
+  <!-- Attach 2 classes to text -->
+  <div :class="['bigger', 'strike']">I got no class :(</div>
 
-            <!-- Click button to alternate between 2 classes -->
-            <div>
-              <button @click="startEffect">Start Effect</button>
-              <div id="effect" :class="effectClass"></div>
-            </div>
+  <!-- Apply class from user input -->
+  <div>
+    <p>Input a class (hint: circle): <input type="text" v-model="userClass"></p>
+    <div :class="userClass"></div>
+  </div>
 
-            <!-- Attach 2 classes to text -->
-            <div :class="['bigger', 'strike']">I got no class :(</div>
+  <div>
+    <p>Color red?: <input type="checkbox" v-model="wantRed"></p>
+    <div :class="[userClass, {'red':wantRed}]"></div>
+  </div>
 
-            <!-- Apply class from user input -->
-            <div>
-              <p>Input a class (hint: circle): <input type="text" v-model="userClass"></p>
-              <div :class="userClass"></div>
-            </div>
+  <!-- Binding styles -->
+  <div>
+    <p>Enter a color: <input type="text" v-model="myStyle.backgroundColor"></p>
+    <div :style="myStyle"></div>
+  </div>
 
-            <div>
-              <p>Color red?: <input type="checkbox" v-model="wantRed"></p>
-              <div :class="[userClass, {'red':wantRed}]"></div>
-            </div>
-
-            <!-- Binding styles -->
-            <div>
-              <p>Enter a color: <input type="text" v-model="myStyle.backgroundColor"></p>
-              <div :style="myStyle"></div>
-            </div>
-
-            <div>
-              <button @click="startProgress">Start Progress</button>
-              <div :class="['progBar']" :style="{width: 500*pct/100 + 'px'}">@{{pct}}%</div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
+  <div>
+    <button @click="startProgress">Start Progress</button>
+    <div :class="['progBar']" :style="{width: 500*pct/100 + 'px'}">@{{pct}}%</div>
   </div>
 </div>
 
@@ -97,7 +87,7 @@
 
 @section('custom_scripts')
 <script>
-var vueThis = new Vue ({
+var vm = new Vue ({
   el : '#ex',
   data: {
     effectClass: {
@@ -112,15 +102,15 @@ var vueThis = new Vue ({
   methods: {
     startEffect() {
       setInterval(function() {
-        vueThis.effectClass.highlight = !vueThis.effectClass.highlight;
-        vueThis.effectClass.shrink = !vueThis.effectClass.shrink;
+        vm.effectClass.highlight = !vm.effectClass.highlight;
+        vm.effectClass.shrink = !vm.effectClass.shrink;
       }, 1000);
     },
     startProgress() {
       var prog = setInterval(function() {
-        vueThis.pct += 5;
-        if(vueThis.pct >= 100) {
-          vueThis.pct = 100;
+        vm.pct += 5;
+        if(vm.pct >= 100) {
+          vm.pct = 100;
           clearInterval(prog);
         }
       },1000);

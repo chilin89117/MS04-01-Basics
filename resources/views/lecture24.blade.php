@@ -1,32 +1,23 @@
 @extends('layouts.app')
 
+@section('panel-heading')
+<div class="panel-heading">Lecture 24: Method / Compute / Watch</div>
+@endsection
+
 @section('content')
 <div id="lec24">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">Lecture 24: Method / Compute / Watch</div>
+  <button @click="counter++">Up</button>
+  <button @click="counter--">Dn</button>
+  <button @click="secondCounter++">Second</button>
 
-          <div class="panel-body">
-
-            <button @click="counter++">Up</button>
-            <button @click="counter--">Dn</button>
-            <button @click="secondCounter++">Second</button>
-
-            <p>@{{counter}} | @{{secondCounter}}</p>
-            <p>@{{result()}} | @{{output}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <p>@{{counter}} | @{{secondCounter}}</p>
+  <p>@{{result()}} | @{{output}}</p>
 </div>
 @endsection
 
 @section('custom_scripts')
 <script>
-var vueThis = new Vue ({
+var vm = new Vue ({
   el : '#lec24',
   data: {
     counter: 0,
@@ -48,7 +39,7 @@ var vueThis = new Vue ({
     counter: function() {
       console.log('WATCH');
       setTimeout(function() {
-        vueThis.counter = 0;
+        vm.counter = 0;
       }, 2000);
     },
   }

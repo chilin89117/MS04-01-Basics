@@ -1,26 +1,17 @@
 @extends('layouts.app')
 
+@section('panel-heading')
+<div class="panel-heading">Lecture 29: Dynamic CSS 2</div>
+@endsection
+
 @section('content')
 <div id="lec29">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">Lecture 29: Dynamic CSS 2</div>
+  <div class="demo" :style="{'background-color': color}"></div>
+  <div class="demo" :style="myStyle"></div>
+  <div class="demo" :style="[myStyle, {height: width+'px'}]"></div>
 
-          <div class="panel-body">
-
-            <div class="demo" :style="{'background-color': color}"></div>
-            <div class="demo" :style="myStyle"></div>
-            <div class="demo" :style="[myStyle, {height: width+'px'}]"></div>
-
-            <p>Color: <input type="text" v-model="color"></p>
-            <p>Width: <input type="text" v-model="width"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <p>Color: <input type="text" v-model="color"></p>
+  <p>Width: <input type="text" v-model="width"></p>
 </div>
 
 <style media="screen">
@@ -36,7 +27,7 @@
 
 @section('custom_scripts')
 <script>
-var vueThis = new Vue ({
+var vm = new Vue ({
   el : '#lec29',
   data: {
     color: '#ccc',

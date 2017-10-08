@@ -23,10 +23,6 @@ Route::get('/lec43',function() {
   return view('lecture43');
 });
 
-Route::get('/lec68',function() {
-  return view('lecture68');
-});
-
 Route::get('/exercise3',function() {
   return view('exercise3');
 });
@@ -39,6 +35,10 @@ Route::get('/exercise5',function() {
   return view('exercise5');
 });
 
-Route::get('/new',function() {
-  return view('new');
+Route::get('/lec68',function() {
+  return view('lecture68');
+});
+
+Route::get('/lec70',function() {
+  return view('lecture70');
 });
