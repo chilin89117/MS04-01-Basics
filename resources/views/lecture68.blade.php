@@ -61,7 +61,7 @@ var vm2 = new Vue({            // Second Vue instance
   },
 });
 
-setTimeout(function() {
+setTimeout(() => {
   vm1.title = 'Changed by timer!';
   // vm1.show();
 }, 3000);

@@ -49,18 +49,16 @@ export default {
   },
   methods: {
     startEffect() {
-      let vm = this;
-      setInterval(function() {
-        vm.effectClass.highlight = !vm.effectClass.highlight;
-        vm.effectClass.shrink = !vm.effectClass.shrink;
+      setInterval(() => {
+        this.effectClass.highlight = !this.effectClass.highlight;
+        this.effectClass.shrink = !this.effectClass.shrink;
       }, 1000);
     },
     startProgress() {
-      let vm = this;
-      var prog = setInterval(function() {
-        vm.pct += 5;
-        if(vm.pct >= 100) {
-          vm.pct = 100;
+      var prog = setInterval(() => {
+        this.pct += 5;
+        if(this.pct >= 100) {
+          this.pct = 100;
           clearInterval(prog);
         }
       },1000);
