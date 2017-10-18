@@ -11,9 +11,9 @@
   <p><a href="{{url('/lec28')}}">28. Dynamic CSS</a></p>
   <p><a href="{{url('/lec29')}}">29. Dynamic CSS 2</a></p>
   <p><a href="{{url('/lec43')}}">43. "v-if" and "v-for"</a></p>
-  <p><a href="{{url('/exercise3')}}">Exercise 3</a></p>
-  <p><a href="{{url('/exercise4')}}">Exercise 4</a></p>
-  <p><a href="{{url('/exercise5')}}">Exercise 5</a></p>
+  <p><a href="{{url('/module/Exercise3')}}">Exercise 3</a></p>
+  <p><a href="{{url('/module/Exercise4')}}">Exercise 4</a></p>
+  <p><a href="{{url('/module/exercise5')}}">Exercise 5</a></p>
 </section>
 
 <section>

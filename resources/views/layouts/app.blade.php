@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    @include('inc.scripts')
+    <script src="{{asset('js/app.js')}}"></script>
 
     @yield('custom_scripts')
 

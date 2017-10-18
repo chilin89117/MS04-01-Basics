@@ -23,16 +23,8 @@ Route::get('/lec43',function() {
   return view('lecture43');
 });
 
-Route::get('/exercise3',function() {
-  return view('exercise3');
-});
-
-Route::get('/exercise4',function() {
-  return view('exercise4');
-});
-
-Route::get('/exercise5',function() {
-  return view('exercise5');
+Route::get('/module/{mod}',function($mod) {
+  return view('module', ['mod' => $mod]);
 });
 
 Route::get('/lec68',function() {

@@ -15,6 +15,8 @@
 
 @section('custom_scripts')
 <script>
+import Vue from 'vue';
+
 var vm = new Vue ({
   el : '#ex',
   data: {
