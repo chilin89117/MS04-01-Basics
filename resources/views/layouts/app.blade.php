@@ -26,7 +26,5 @@
 
     <script src="{{asset('js/app.js')}}"></script>
 
-    @yield('custom_scripts')
-
   </body>
 </html>

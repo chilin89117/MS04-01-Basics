@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div id="app">
+<section id="app">
   <component :is="'{{$mod}}'"></component>
-</div>
+</section>
 @endsection
